@@ -2,3 +2,6 @@
 flask==3.0.0
 pytest==8.0.0
 flake8==7.0.0
+Flask-JWT-Extended
+Flask-HTTPAuth
+passlib

@@ -31,3 +31,10 @@ def test_invalid_input(client):
     response = client.get("/add/five/ten")
     # Flask returns 404 if the route type <int:> doesn't match, unlike FastAPI's 422
     assert response.status_code == 404
+
+def test_subtraction_logic_requires_auth(client):  
+    """
+    Test the subtraction endpoint to ensure it requires authentication.
+    """
+    response = client.get("/substract/10/5")
+    assert response.status_code == 401  # Unauthorized since no JWT provided
